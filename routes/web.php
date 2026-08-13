@@ -70,7 +70,7 @@ Route::middleware([RoleMiddleware::class . ':admin'])->group(function () {
     Route::delete('/admin/users/{id}', [AdminController::class, 'destroyUsers'])->name('admin.users.destroy');
     Route::put('/admin/users/{user}', [AdminController::class, 'updateUsers'])->name('admin.users.update');
 
-    
+
 
     Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
     Route::post('/admin/profile/update', [AdminController::class, 'updateProfile'])->name('admin.profile.update');

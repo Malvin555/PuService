@@ -4,9 +4,9 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
-use Hash;
-use Storage;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Report;
 use App\Models\Category;
 
@@ -55,7 +55,7 @@ class UserController extends Controller
             'address' => $request->address,
             'status' => 'pending',
         ]);
-        
+
         return redirect()->route('user.dashboard')->with('success', 'Report submitted successfully.');
     }
 
@@ -83,7 +83,7 @@ class UserController extends Controller
         $reports = $query->latest()->paginate(5);
 
         return view('user.report.history', compact('categories', 'reports'));
-    }   
+    }
 
 
 

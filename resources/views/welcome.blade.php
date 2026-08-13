@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 
     <!-- Add padding to account for fixed navbar -->
